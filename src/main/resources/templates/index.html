@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Random Image</h1>
+    <div>
+        The random number generated is: <span data-th-text="${number}"></span>
+    </div>
+    <div>
+        <!-- use this way instead of |/images/number${number}.jpg| as that is string concatenation.
+        The result is a hardcoded string, whereas the @ method allows the src to dynamically change depending on where the webapp is deployed. e.g. localhost:8080/myapp/ string method will have to change all src to include myapp -->
+        <img data-th-src="@{/images/number{i}.jpg(i=${number})}" height="550">
+    </div>
+</body>
+
+</html>
