@@ -48,10 +48,10 @@ public class Day11workshopApplication {
 			portNum = DEFAULT_PORTNUM;
 		}
 		
+		// server.port takes highest priority
 		SpringApplication app = new SpringApplication(Day11workshopApplication.class);
 		app.setDefaultProperties(Collections.singletonMap("server.port", portNum));
 		app.run(args);
-		//SpringApplication.run(Day11workshopApplication.class, args);
 	}
 
 }
